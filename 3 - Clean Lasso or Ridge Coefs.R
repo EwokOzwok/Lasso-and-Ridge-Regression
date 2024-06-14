@@ -1,25 +1,20 @@
 library(caret)
 library(caTools)
-New_df<-dplyr::select(clean_df, UA_SUICIDE_Considered,
-PHQ9_2,
-Diener4,
-Race_Black,
-B_Sex_Pr_1,
-S_MHI_diag_11,
-Diener3,
-Diener5,
-B_Sex_Pr_2,
-S_MHI_diag_8,
-S_MHI_diag_36,
-UA_SUICIDE_Attempted)
 
+ridge_coef<- read.csv("Ridge_Coefficients.csv", header = T, sep = ',', encoding = 'utf-8-rom')
+
+ridge_coef$Abs_value <- abs(ridge_coef$Coefficient)
+
+ridge_coef<- ridge_coef[ridge_coef$Abs_value > .03, ]
+
+New_df<-dplyr::select(clean_df, UA_SUICIDE_Attempted, ridge_coef$Variable)
 
 set.seed(123)  # For reproducibility
 split <- sample.split(New_df$UA_SUICIDE_Attempted, SplitRatio = 0.7)  # 70% training data
 
 New_df<-na.omit(New_df)
 
-for(i in 1:11){
+for(i in 2:19){
   New_df[,i]<-mean(New_df[,i])-New_df[,i]
 }
 New_df$UA_SUICIDE_Attempted

@@ -152,13 +152,6 @@ table(clean_df$UA_SUICIDE_Considered)
 colnames(clean_df)
 
 
-
-# Rename MH Vars ----------------------------------------------------------
-
-clean_cols<-read.csv("CleanColNames.csv", header = T, sep=",", encoding = 'utf-8-rom')
-
-colnames(clean_df)<-clean_cols$x
-
 # Splitting the Data into Training and Testing subsamples -----------------
 
 
