@@ -21,7 +21,7 @@ y_test = r.y_test_py
 
 # The KFold object in SciKit Learn tells the cross validation object (see below) how to split up the data:
 # Initiate KFold Object
-kf = KFold(shuffle=True, random_state=777777, n_splits=4)
+kf = KFold(shuffle=True, random_state=7777777, n_splits=4)
 
 kf.split(X_train) # is a generator object
 
