@@ -136,22 +136,44 @@ head(clean_df)
 clean_df<-clean_df[,-c(2)]
 
 colnames(clean_df)
+clean_df<-clean_df[clean_df$Hispanic < 94, ]
 
-X<-clean_df[,-c(120)]
-y<-clean_df[,c(120)]
+clean_df<-clean_df[clean_df$UA_SUICIDE_Attempted < 5, ]
+clean_df<-na.omit(clean_df)
+
+finalfit::missing_plot(clean_df)
+
+clean_df$SemesterStress<-as.numeric(unlist(clean_df$SemesterStress))
+
+library(caTools)
+set.seed(123)  # For reproducibility
+split <- sample.split(clean_df$UA_SUICIDE_Attempted, SplitRatio = 0.7)  # 70% training data
+
+# Create training and testing sets
+training <- subset(clean_df, split == TRUE)
+testing <- subset(clean_df, split == FALSE)
 
 
+
+
+X_train<-training[,-c(120)]
+X_test<-testing[,-c(120)]
+
+y_train<-training[,c(120)]
+y_test<-testing[,c(120)]
+
+colnames(X_train)
 
 
 library(reticulate)
 use_condaenv("mlbase", required=T)
+py_config()
 
 
 
-X_py<-r_to_py(X)
-y_py<-r_to_py(y)
-
-colnames(clean_df)
+X_train_py<-r_to_py(X_train)
+X_test_py<-r_to_py(X_test)
 
 
-
+y_train_py<-r_to_py(y_train)
+y_test_py<-r_to_py(y_test)
