@@ -145,6 +145,23 @@ finalfit::missing_plot(clean_df)
 
 clean_df$SemesterStress<-as.numeric(unlist(clean_df$SemesterStress))
 
+clean_df<-clean_df[clean_df$UA_SUICIDE_Considered < 5, ]
+
+table(clean_df$UA_SUICIDE_Considered)
+
+colnames(clean_df)
+
+
+
+# Rename MH Vars ----------------------------------------------------------
+
+clean_cols<-read.csv("CleanColNames.csv", header = T, sep=",", encoding = 'utf-8-rom')
+
+colnames(clean_df)<-clean_cols$x
+
+# Splitting the Data into Training and Testing subsamples -----------------
+
+
 library(caTools)
 set.seed(123)  # For reproducibility
 split <- sample.split(clean_df$UA_SUICIDE_Attempted, SplitRatio = 0.7)  # 70% training data
@@ -155,6 +172,7 @@ testing <- subset(clean_df, split == FALSE)
 
 
 
+# Separating all predictors (X) from outcome (y) --------------------------
 
 X_train<-training[,-c(120)]
 X_test<-testing[,-c(120)]
@@ -165,11 +183,15 @@ y_test<-testing[,c(120)]
 colnames(X_train)
 
 
+
+# Load the reticulate package & Activate python environment ---------------
+
 library(reticulate)
 use_condaenv("mlbase", required=T)
 py_config()
 
 
+# Convert R objects to PY objects (X_train_py is the python object --------
 
 X_train_py<-r_to_py(X_train)
 X_test_py<-r_to_py(X_test)

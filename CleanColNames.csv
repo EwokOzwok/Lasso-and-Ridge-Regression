@@ -1,0 +1,133 @@
+x
+AttendedAppt
+GraduateStudent
+B_BirthYear
+Hispanic
+Ethn_centralam
+Ethn_cuban
+Ethn_dominican
+Ethn_mexican
+Ethn_puertorican
+Ethn_southam
+Ethn_other
+Ethn_other_spec
+Race_Black
+Race_White
+Race_AIAN
+Race_Asian
+Race_AsianIndian
+Race_Chinese
+Race_Filipino
+Race_Japanese
+Race_Korean
+Race_Vietnamese
+Race_OtherAsian
+Race_Samoan
+Race_OtherPacIsland
+Race_Other
+S_LangDich
+B_Gender
+B_Sex_Pr_1
+B_Sex_Pr_2
+B_Sex_Pr_3
+B_Sex_Pr_7
+B_Sex_Pr_96
+B_Sex_Pr_97
+B_Sex_Pr_5
+B_Sex_Pr_6
+S_RelStatus
+UA_CollegeYear
+M_AreYou_1
+M_AreYou_2
+M_AreYou_3
+M_AreYou_4
+M_AreYou_5
+M_AreYou_6
+M_AreYou_8
+M_AreYou_9
+M_HIVstatus
+M_VHstatus
+M_KnowSA
+UA_KnowSA
+M_KnowHIV
+UA_KnowHIV
+M_HIncome
+UA_GPA
+M_TobRsk
+M_AlcRsk
+M_MJRsk
+M_ShNeedle
+M_NonRxRsk
+M_RxRsk
+M_UnpSexRsk
+M_AlcDrgSexRsk
+M_SexRefusal
+UA_SocialMediaT
+B_TobUse30_1
+B_AlcUse30_1
+M_Binge30_1
+UA_AlcLastParty
+UA_TypicalLastParty
+B_MJ30D_MJ_1
+Brief psychotic disorder 
+Unspecified psychosis 
+Bipolar disorder 
+Major depressive disorder
+Major depressive disorder
+Manic episode 
+Persistent mood (affective) disorders 
+Unspecified mood (affective) disorders 
+Agoraphobia without panic disorder 
+Agoraphobia with panic disorder 
+Agoraphobia
+Generalized anxiety disorder 
+Panic disorder 
+Phobic anxiety disorders 
+Social phobias (social anxiety disorder) 
+Specific (isolated) phobias 
+Excoriation (skin-picking) disorder 
+Obsessive-compulsive disorder 
+Obsessive-compulsive disorder with mixed obsessional thoughts and acts 
+Acute stress disorder; reaction to severe stress
+Adjustment disorders 
+Body dysmorphic disorder 
+Dissociative and conversion disorders 
+Post traumatic stress disorder 
+Eating disorders 
+Sleep disorders not due to a substance or known physiological condition 
+Antisocial personality disorder 
+Avoidant personality disorder 
+Borderline personality disorder 
+Intellectual disabilities 
+Obsessive compulsie personality disorder 
+Other specific personality disorder 
+Paranoid personality disorder 
+Personality disorder
+Pervasive and specific developmental disorders 
+M_NumSexP
+M_SexResources
+M_AnyAbuse3M
+PHQ9_1
+PHQ9_2
+PHQ9_3
+PHQ9_4
+PHQ9_5
+PHQ9_6
+PHQ9_7
+PHQ9_8
+PHQ9_9
+PHQ9_10
+UA_SUICIDE_Considered
+UA_SUICIDE_Attempted
+Diener1
+Diener2
+Diener3
+Diener4
+Diener5
+Diener6
+Diener7
+Diener8
+BelongUA1
+AUDIT
+DAST
+SemesterStress
