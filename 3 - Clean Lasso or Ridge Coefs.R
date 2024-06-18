@@ -1,5 +1,7 @@
 library(caret)
 library(caTools)
+options(scipen = 999)  # Disable scientific notation
+
 
 ridge_coef<- read.csv("Ridge_Coefficients.csv", header = T, sep = ',', encoding = 'utf-8-rom')
 
@@ -17,6 +19,7 @@ New_df<-na.omit(New_df)
 for(i in 2:19){
   New_df[,i]<-mean(New_df[,i])-New_df[,i]
 }
+
 New_df$UA_SUICIDE_Attempted
 
 # Create training and testing sets
@@ -61,6 +64,7 @@ RSS <- sum(error^2)
 # Calculate R-squared (R2)
 R2 <- 1 - (RSS/TSS)
 print(paste("R-squared (R2):", round(R2, 3)))
+
 
 
 
